@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>معرض الأعمال</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --main-color: #007bff;
+      --bg-color: #f8f9fa;
+      --text-color: #1a1a1a;
+      --card-bg: white;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    body.dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #ffffff;
+      --card-bg: #2b2b2b;
+      --shadow: 0 4px 14px rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.7;
+      transition: all 0.3s ease-in-out;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--main-color), #0056b3);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+    }
+
+    .mode-toggle {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    .mode-toggle:hover {
+      color: #ffd700;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 3rem 1rem;
+    }
+
+    h2 {
+      color: var(--main-color);
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      border-right: 4px solid var(--main-color);
+      padding-right: 0.6rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .project h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .project a {
+      color: var(--main-color);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .contact p {
+      font-size: 1rem;
+      margin: 0.7rem 0;
+    }
+
+    .contact i {
+      margin-left: 8px;
+      color: var(--main-color);
+    }
+
+    footer {
+      text-align: center;
+      background-color: #e0e0e0;
+      padding: 1.2rem;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    body.dark-mode footer {
+      background-color: #2a2a2a;
+      color: #bbb;
+    }
+
+    /* ✅ لون الرابط في الوضع الداكن */
+    body.dark-mode a {
+      color: #66b2ff;
+    }
+
+    body.dark-mode a:hover {
+      color: #a6d4ff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="mode-toggle" onclick="toggleMode()" title="تبديل الوضع">
+      <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
+    <h1>يحيى خالد محمد</h1>
+    <p>مطور واجهات أمامية | HTML, CSS, JavaScript, Bootstrap</p>
+  </header>
+
+  <section>
+    <h2>نبذة عني</h2>
+    <p>
+      اسمي يحيى. مطور واجهات أمامية متخصص في HTML, CSS, JavaScript وBootstrap 5.
+      أعمل على تطوير مهاراتي يومياً وأسعى لبناء مواقع جذابة وسريعة ومتجاوبة مع جميع الأجهزة.
+      أتعلم حالياً React وأحب تنفيذ أفكار جديدة وتحويلها إلى مواقع واقعية.
+    </p>
+  </section>
+
+  <section>
+    <h2>مشاريعي</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>🌍 موقع عن التغير المناخي</h3>
+        <p>مشروع تعليمي عن التغير المناخي باستخدام HTML.CSS</p>
+        <a href="https://Yahia-Dev-1.github.io/Climate-change/" target="_blank">شاهد المشروع</a>
+      </div>
+      <div class="project">
+        <h3>🛒 قالب متجر إلكتروني</h3>
+        <p>متجر إلكتروني متجاوب بالكامل باستخدام HTML.CSS.JavaScript.bootstrap5</p>
+        <a href="https://Yahia-Dev-1.github.io/e-commer-/" target="_blank">شاهد المشروع</a>
+      </div>
+    </div>
+       </div>
+      <div class="project">
+        <h3>To Do list</h3>
+        <p>To-Do-list باستخدام React</p>
+        <a href="https://yahia-dev-1.github.io/To--Do--list/" target="_blank">شاهد المشروع</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="contact">
+    <h2>تواصل معايا</h2>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:yahiapro400@gmail.com">yahiapro400@gmail.com</a></p>
+    <p><i class="fab fa-github"></i> <a href="https://github.com/Yahia-Dev-1" target="_blank">Yahia-Dev</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 يحيى خالد محمد. جميع الحقوق محفوظة.
+  </footer>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const icon = document.getElementById('theme-icon');
+      body.classList.toggle('dark-mode');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    }
+  </script>
+
+</body>
+</html>
